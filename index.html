@@ -1,0 +1,937 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="css/simpleGridTemplate.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"><!--recent activity-->
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet"><!--full feature carousel-->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"><!--full feature carousel-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--icon library/search box-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><!--expandable search-->
+
+
+
+    <style>
+        /*body {
+                    margin-top: 20px;
+                    color: #ccc;
+                    background-color: #f1f2f7;
+                }*/
+
+        a, a:hover, a:focus {
+            text-decoration: none;
+            outline: none;
+        }
+
+        .profile-information .profile-pic img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border: 10px solid #f1f2f7;
+            margin-top: 20px;
+        }
+
+        .profile-information .profile-desk h1 {
+            color: #4d5b60;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+
+        .panel {
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+            box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        }
+
+        .profile-information .profile-desk {
+            border-right: 1px solid #ddd;
+            padding-right: 30px;
+        }
+
+        .btn-primary {
+            background-color: #4d5b60;
+            border-color: #1fb5ad;
+            color: #FFFFFF;
+        }
+
+
+
+
+        .act-content {
+            padding: 40px;
+        }
+
+        .recent-act h1 {
+            text-align: center;
+            /*color: #1fb5ad;*/
+            color: #4d5b60;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .activity-icon {
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            /*color: #FFFFFF;*/
+            color: #000000;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            width: 30px;
+            margin: 20px auto 20px;
+            position: relative;
+        }
+
+            .activity-icon.terques {
+                background: #1f2121;
+            }
+
+        .activity-icon {
+            /*background: #C7CBD6;*/
+            background: #8fd6d6;
+        }
+
+        .recent-act:before {
+            background-color: #eeeeee;
+            bottom: 0;
+            content: "";
+            left: 50%;
+            position: absolute;
+            top: 50px;
+            width: 2px;
+            z-index: 0;
+        }
+
+        .activity-desk {
+            padding: 15px 30px;
+            background: #f2f2f2;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            position: relative;
+            text-align: center;
+        }
+
+            .activity-desk h2 {
+                color: #535958;
+                font-size: 14px;
+                font-weight: bold;
+                margin: 0 0 10px 0;
+                text-transform: uppercase;
+            }
+
+        body {
+            padding-top: 50px;
+        }
+        /*#####################
+        Additional Styles (required)
+        #####################*/
+        .carousel-control.left, .carousel-control.right {
+            background-image: none !important;
+        }
+
+        .carousel-inner .item img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-indicators {
+            bottom: 5px;
+            left: 0;
+            width: auto;
+            padding: 5px 25px 5px 25px;
+            margin-left: 0;
+            background: rgba(0,0,0,0.7);
+        }
+
+            .carousel-indicators li {
+                border-radius: 0;
+                width: 8px;
+                height: 8px;
+                background: #fff;
+            }
+
+            .carousel-indicators .active {
+                width: 10px;
+                height: 10px;
+                background: #39b3d7;
+                border-color: #39b3d7;
+            }
+
+        .carousel-control {
+            background: #39b3d7;
+            color: #fff;
+            padding: 4px 0;
+            width: 26px;
+            top: auto;
+            left: auto;
+            bottom: 12px;
+            opacity: 0.85;
+        }
+
+            .carousel-control.right {
+                right: 10px;
+            }
+
+            .carousel-control.left {
+                right: 46px;
+            }
+
+        .carousel-caption {
+            top: auto;
+            width: auto;
+            right: auto;
+            bottom: 60px;
+            left: 0;
+            padding: 20px;
+            background: rgba(0,0,0,0.70);
+            text-align: left;
+            height: auto;
+            max-width: 50%;
+        }
+
+
+
+        /* Add a black background color to the top navigation bar */
+        .topnav {
+            overflow: hidden;
+            background-color: #e9e9e9;
+        }
+
+            /* Style the links inside the navigation bar */
+            .topnav a {
+                float: left;
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                /* Change the color of links on hover */
+                .topnav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+                /* Style the "active" element to highlight the current page */
+                .topnav a.active {
+                    background-color: #2196F3;
+                    color: white;
+                }
+
+            /* Style the search box inside the navigation bar */
+            .topnav input[type=text] {
+                float: right;
+                padding: 6px;
+                border: none;
+                margin-top: 8px;
+                margin-right: 16px;
+                font-size: 17px;
+            }
+
+        /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+        @media screen and (max-width: 600px) {
+            .topnav a, .topnav input[type=text] {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+
+        /*ghost buttons*/
+        .ghost-button {
+            display: inline-block;
+            width: 200px;
+            padding: 8px;
+            color: #fff;
+            border: 1px solid #fff;
+            text-align: center;
+            outline: none;
+            text-decoration: none;
+        }
+
+
+
+
+        .ghost-button-rounded-corners {
+            display: inline-block;
+            width: 200px;
+            /*padding: 8px;*/
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            text-align: center;
+            outline: none;
+            text-decoration: none;
+            font-size: 1.0625em;
+            padding: 0.5625em 1.5em;
+        }
+
+            .ghost-button-rounded-corners:hover,
+            .ghost-button-rounded-corners:active {
+                background-color: #fff;
+                color: #000;
+            }
+
+        /* end ghost buttons*/
+
+        /*button sizes*/
+        @import url(https://fonts.googleapis.com/css?family=Raleway);
+
+        *, *:before, *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrap {
+            width: 100%;
+            max-width: 900px;
+            margin: 4em auto;
+            font-family: Raleway, Arial, sans-serif;
+            padding: 1em 2em;
+        }
+
+        hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 2px solid #eee;
+            margin: 2em 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            margin-bottom: 1em;
+            border-bottom: 2px solid #eee;
+            line-height: 1.5;
+        }
+
+            h1 > small {
+                color: #666;
+            }
+
+                h1 > small > a,
+                p > a {
+                    color: #3CB371;
+                    text-decoration: none;
+                }
+
+                    h1 > small > a:hover,
+                    p > a:hover {
+                        text-decoration: underline;
+                    }
+
+        /* Buttons styles */
+        input::-moz-focus-inner,
+        button::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+
+        input[type="submit"].btn,
+        button.btn {
+            cursor: pointer;
+        }
+
+        a.btn, .btn {
+            margin-right: 1em; /* remove this while use*/
+            margin-bottom: 1em; /* remove this while use*/
+            display: inline-block;
+            outline: none;
+            *zoom: 1;
+            text-align: center;
+            text-decoration: none;
+            font-family: inherit;
+            font-weight: 300;
+            letter-spacing: 1px;
+            vertical-align: middle;
+            border: 1px solid;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+            text-shadow: 0 1px 0 rgba(0,0,0,0.01);
+        }
+        /* Radius */
+        .btn-radius {
+            border-radius: 3px;
+        }
+        /* Sizes */
+        .btn-small {
+            font-size: 0.8125em;
+            padding: 0.4125em 1.25em;
+        }
+
+        .btn-medium {
+            font-size: 0.9375em;
+            padding: 0.5375em 1.375em;
+        }
+
+        .btn-large {
+            font-size: 1.0625em;
+            padding: 0.5625em 1.5em;
+        }
+
+        /* Colors */
+
+
+        .btn-gray {
+            color: #808080;
+            border-color: #808080;
+        }
+
+            .btn-gray:hover {
+                background: #808080;
+                color: #fff;
+                border-color: #808080;
+            }
+
+        /* end button sizes*/
+
+        /* flex-box*/
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            /*width: 80%;*/
+            width: 100%;
+            margin: 1em auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /*border: 1px solid pink;*/
+            border: 1px solid goldenrod; 
+        }
+
+        .wide {
+            flex: 0 0 100%;
+        }
+
+        button:first-of-type {
+            margin-right: 2em;
+        }
+
+        button {
+            flex: 1;
+        }
+        /* end flex-box*/
+
+        /* expand search*/
+        .expandSearch {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .expandSearch i {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding: 8px 4px 8px 8px;
+                color: #777;
+                cursor: pointer;
+                transition: 0.24s;
+            }
+
+                .expandSearch i:hover {
+                    color: #0bf;
+                }
+
+            .expandSearch input {
+                border: none;
+                background: transparent;
+                font: 14px/1.4 sans-serif;
+                padding-left: 26px;
+                background: #fff;
+                border: 2px solid #ddd;
+                border-radius: 4px;
+                transition: 0.24s;
+                width: 0px;
+                padding: 8px 0px 8px 34px;
+            }
+
+                .expandSearch input:focus {
+                    border-color: #aaa;
+                    outline: none;
+                    width: 200px;
+                    padding: 12px 12px 12px 34px;
+                    border-color: #0bf;
+                }
+
+                    .expandSearch input:focus + i {
+                        padding: 12px 4px 12px 8px;
+                        color: #ddd;
+                        pointer-events: none;
+                    }
+        /* end expand search*/
+
+        /*horizontal icon-bar*/
+        .icon-bar {
+            width: 100%; /* Full-width */
+            background-color: #555; /* Dark-grey background */
+            overflow: auto; /* Overflow due to float */
+        }
+
+            .icon-bar a {
+                float: left; /* Float links side by side */
+                text-align: center; /* Center-align text */
+                width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
+                padding: 12px 0; /* Some top and bottom padding */
+                transition: all 0.3s ease; /* Add transition for hover effects */
+                color: white; /* White text color */
+                font-size: 20px; /* Increased font size */
+            }
+
+                .icon-bar a:hover {
+                    background-color: #000; /* Add a hover color */
+                }
+        .active {
+            /*background-color: #4CAF50;  Add an active/current color */
+            background-color:goldenrod; 
+        } 
+                /* end horizontal icon-bar*/
+
+
+                /*btn-group*/
+        .btn-group button {
+            /*background-color: #4CAF50;*/ /* Green background */
+            background-color:transparent;
+            border: 1px solid green; /* Green border */
+           
+            /*color: white;*/ /* White  */
+            color: #fff;
+            padding: 10px 24px; /* Some padding */
+            cursor: pointer; /* Pointer/hand icon */
+            float: left; /* Float the buttons side by side */
+        }
+
+            .btn-group button:not(:last-child) {
+                border-right: none; /* Prevent double borders */
+            }
+
+        /* Clear floats (clearfix hack) */
+        .btn-group:after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        /* Add a background color on hover */
+        .btn-group button:hover {
+            /*background-color: #3e8e41;*/
+            background-color:goldenrod;
+        } 
+        /*end btn-group*/
+
+       /* 02/26/2019*/
+        * {
+            margin: 0;
+            padding: 0;
+            font: 15px/18px Tahoma, Geneva, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #eee;
+        }
+
+        header {
+            display: block;
+            background: #333;
+            padding: 15px;
+            position: relative;
+        }
+
+            header:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+        h1 {
+            float: left;
+            font-size: 32px;
+            line-height: 36px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: -4px;
+            text-shadow: 2px 2px 0 rgba(255,255,255,0.3), -2px -2px 0 rgba(255,255,255,0.15), 4px -1px 0 rgba(255,255,255,0.35);
+            min-width: 90px;
+            padding-right: 20px;
+        }
+
+        .search {
+            position: absolute;
+            top: 15px;
+            right: 420px;
+            bottom: 15px;
+            left: 135px;
+            background: #fff;
+            border-radius: 4px;
+            padding: 4px;
+            overflow: hidden;
+        }
+
+            .search .input-bg {
+                position: absolute;
+                top: 0;
+                right: 36px;
+                bottom: 0;
+                left: 12px;
+            }
+
+            .search input {
+                border: none;
+                background: none;
+                display: block;
+                width: 100%;
+                height: 28px;
+                padding: 4px 0;
+                outline: none;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .search button {
+                position: absolute;
+                right: 4px;
+                height: 28px;
+                width: 28px;
+                border: none;
+                background: #09f;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+
+                .search button:before,
+                .search button:after {
+                    content: '';
+                    position: absolute;
+                }
+
+                .search button:before {
+                    top: 6px;
+                    left: 6px;
+                    width: 9px;
+                    height: 9px;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                }
+
+                .search button:after {
+                    top: 18px;
+                    left: 15px;
+                    width: 8px;
+                    height: 2px;
+                    background: #fff;
+                    border-radius: 2px;
+                    transform: rotate(45deg);
+                }
+
+        nav {
+            float: right;
+            margin: -15px;
+            margin-left: 0;
+            width: 380px;
+        }
+
+            nav ul {
+                list-style: none;
+            }
+
+                nav ul:after {
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+
+            nav li {
+                float: left;
+            }
+
+            nav a {
+                display: block;
+                font-size: 14px;
+                color: #eee;
+                text-decoration: none;
+                padding: 24px 20px;
+                transition: 0.2s all;
+            }
+
+                nav .active a,
+                nav a:hover {
+                    background: #222;
+                    box-shadow: 0 3px 0 #09f inset;
+                }
+
+
+       /* ./ 02/26/2019*/
+
+    </style>
+
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <!--<header class="header">
+            <h6 class="logo">West Point <br /> </h6>
+            <h4 class="logo">Information Technology Services Branch <br /> </h4>
+        </header>-->
+        <header>
+            <h1>Logo</h1>
+            <div class="search">
+                <div class="input-bg">
+                    <input type="text" placeholder="Search for something..." onclick="window.open('search_results.html');">
+                </div>
+                <button type="submit"></button>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#">Page</a></li>
+                    <li><a href="#">Page</a></li>
+                    <li><a href="#">Your Library</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--<div class="topnav"><!--save-->
+        <!--<a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#"></a>
+        <div class="input-group col-md-9">
+            <input type="text" class="form-control" placeholder="Search">
+            <div class="input-group-append">
+                <button class="btn btn-secondary" type="button">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/accounts/login/">Sign In</a></div>
+    </div>-->
+
+
+        <div class="icon-bar">
+
+
+
+            <a class="active" href="#"><i class="fa fa-home">Home</i></a>
+            <!--<a href="#"><i class="fa fa-search"></i></a>-->
+            <a href="#"><i class="fa fa-envelope">Contact</i></a>
+            <a href="#"><i class="fa fa-badge"></i></a>
+            <a href="#"><i class="fa fa-user"></i>&nbsp;Login</a>
+
+            <!-- search icon expandable search --keep!-->
+            <label class="expandSearch">
+                <input type="text" placeholder="Search..." name="search" >
+                <i class="material-icons">search</i>
+            </label>
+
+        </div>
+
+
+        <!--featured carousel-->
+        <div id="myCarousel" class="carousel slide">
+
+            <div class="carousel-inner">
+                <article class="item active">
+                    <!--<img src="http://placehold.it/1200x440/cccccc/ffffff">-->
+                    <img src="images/usma_wp.jpg" />
+                    <div class="carousel-caption">
+                        <h3>SUPPORT CENTER</h3>
+                        <p>The ITSB Support Center has been established to provide a centralized location for self-serve help through the use of an active knowledge base featuring </p>
+                        <p>commonly requested content and documentation of known issues, as well as an online ticketing system to submit a request for IT assistance. This system will improve our efficiency, communication and collaboration to provide an improved support experience resolving your IT inquires.</p>
+                        <!--<p><a class="btn btn-info btn-sm" onclick="window.open('SubmitTicket.html');">Submit a Request</a></p>-->
+                        <p><a class="ghost-button-rounded-corners" onclick="window.open('SubmitTicket.html');">Submit a Request</a></p>
+                        <!--<p><a href="skype:melissa.sanicola@westpoint.edu?chat">Start Chat</a></p>-->
+                    </div>
+                </article>
+                <article class="item">
+                    <img src="http://placehold.it/1200x440/999999/cccccc">
+                    <div class="carousel-caption">
+                        <h3>Headline 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <p><a class="ghost-button-rounded-corners">Read More</a></p>
+                    </div>
+                </article>
+                <article class="item">
+                    <img src="http://placehold.it/1200x440/dddddd/333333">
+                    <div class="carousel-caption">
+                        <h3>Headline 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                        <p><a class="ghost-button-rounded-corners">Read More</a></p>
+                    </div>
+                </article>
+            </div>
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Controls -->
+            <div class="carousel-controls">
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                    <span class="fa fa-angle-double-left"></span>
+                </a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                    <span class="fa fa-angle-double-right"></span>
+                </a>
+            </div>
+        </div><!--end featured carousel-->
+        <!-- Four buttons in a group -->
+        <!-- Buttons Gallery Section -->
+        <div class="gallery" style="background-color:black">
+            <div class="wrap">
+                <div class="btn-group">
+                    <!--<div class="btn-group btn-group-justified">-->
+                    <a class="ghost-button-rounded-corners btn-large" href="#">Getting started with this Help Center</a>
+                    <a href="SubmitTicket.html" target="_blank" class="ghost-button-rounded-corners btn-large"><br />Submit a Request</a>
+                    <a href="#" class="ghost-button-rounded-corners btn-large">Accounts, Passwords & Directory Info</a>
+                    <a href="#" class="ghost-button-rounded-corners btn-large">Announcements and Alerts</a>
+                </div><!--./ btn-group-->
+                <!--<div class="btn-group btn-group-justified">-->
+                <!--<a href="#" class="btn btn-large btn-gray">Announcements and Alerts</a>
+            <a href="#" class="btn btn-large btn-gray">FAQs/Knowledge Base Articles</a>
+            <a href="#" class="btn btn-large btn-gray">Hardware/Software Support</a>-->
+                <!--</div>-->
+                <div class="btn-group">
+                    <!--<div class="btn-group btn-group-justified">-->
+                    <a class="ghost-button-rounded-corners btn-large" href="#">FAQs/Knowledge Base Article</a>
+                    <a href="SubmitTicket.html" target="_blank" class="ghost-button-rounded-corners btn-large"><br />Policies</a>
+                    <a href="#" class="ghost-button-rounded-corners btn-large">Hardware/Software Support</a>
+                    <a href="#" class="ghost-button-rounded-corners btn-large"><br />Email Services</a>
+                </div><!--./ btn-group-->
+
+            </div><!-- ./wrap-->
+            <!-- Cards Section -->
+
+            <div class="thumbnail">
+                <a href="cio_corner.html" target="_blank"><img src="images/cio-logo-white.jpg" alt="" width="2000" class="cards" /></a>
+                <h4>CIO CORNER</h4>
+                <p class="tag"></p>
+                <p class="text_column"></p>
+            </div>
+            <div class="thumbnail">
+                <a href="#"><img src="images/bkg_06.jpg" alt="" width="2000" class="cards" /></a>
+                <h4>TRENDING NOW</h4>
+                <p class="tag"></p>
+                <p class="text_column"></p>
+            </div>
+            <div class="thumbnail">
+                <a href="#"><img src="images/bkg_06.jpg" alt="" width="2000" class="cards" /></a>
+                <h4>IT NEWS</h4>
+                <p class="tag"></p>
+                <p class="text_column"></p>
+            </div>
+            <div class="thumbnail">
+                <a href="#"><img src="images/bkg_06.jpg" alt="" width="2000" class="cards" /></a>
+                <h4>IT SERVICES</h4>
+                <p class="tag"></p>
+                <p class="text_column"></p>
+            </div>
+        </div>
+        <!-- ./Cards Section -->
+        <!--recent activity-->
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel">
+                    <div class="panel-body profile-information">
+                        <div class="col-md-3">
+                            <div class="profile-pic text-center">
+                                <!--<img src="https://bootdey.com/img/Content/user_6.jpg" alt="">-->
+                                <!--<img src="images/profile_img.jpg" />-->
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="profile-desk text-center">
+                                <h2>RECENT ACTIVITY</h2>
+                                <!--<span class="text-muted">Project Manager</span>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor vestibulum imperdiet. Ut auctor accumsan erat, a vulputate metus tristique non. Aliquam aliquam vel orci quis sagittis.
+                            </p>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="panel act-content">
+                    <div class="recent-act">
+                        <div class="activity-icon terques">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        <div class="activity-desk">
+                            <h2>1 Hour Ago</h2>
+                            <h2>HELP DESK</h2>
+                            <p><a href="https://itssc.rpi.edu/hc/en-us/articles/360022105711-How-to-Check-DHCP-Status-on-Mac" target="_blank">How to Check DHCP Status on Mac </a></p>
+                        </div>
+                        <div class="activity-icon terques">
+                            <i class="fa fa-list"></i>
+                        </div>
+                        <div class="activity-desk">
+                            <h2>2 Hours Ago</h2>
+                            <p>Content dated >= 2 hours ago.....</p>
+                        </div>
+                        <div class="activity-icon terques">
+                            <i class="fa fa-envelope"></i>
+                        </div>
+                        <div class="activity-desk">
+                            <h2>3 Days Ago</h2>
+                            <p>Content dated <= 3 days ago.....</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ./recent activity-->
+        <!-- Footer Section -->
+        <!--<footer id="contact">
+    <p class="hero_header">CONTACT INFORMATION</p>-->
+        <!--<div class="button">--><!--EMAIL ME--> <!--</div>-->
+        <!--</footer>-->
+    </div>
+    <!-- Main Container Ends -->
+    <script src="http://codeorigin.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script>
+        $('#myCarousel').carousel({
+            interval: 5000
+        });
+    </script>
+  
+        
+   
+</body>
+</html>

@@ -1,0 +1,291 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="css/simpleGridTemplate.css" rel="stylesheet" type="text/css">
+   
+    <style>
+       
+
+        body {
+            font-family: "Helvetica", sans-serif;
+            margin: 20px;
+            font-size: 1.0em;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
+
+        h4.tiny-results-name {
+            font-size: 1.0em;
+            font-weight: light;
+            color: #999;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            font-weight: 300;
+        }
+
+            h2 a {
+                text-decoration: none;
+            }
+
+                h2 a:hover {
+                    text-decoration: underline;
+                }
+
+        .search-result {
+            border-top: 1px solid #cccccc;
+            padding: 15px 15px 10px;
+            margin-bottom: 5px;
+        }
+
+            .search-result h2 {
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+
+        .destination-url {
+            margin: 0;
+            padding: 0;
+            color: green;
+        }
+
+        .result-desc {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+
+        /* 02/26/2019*/
+        * {
+            margin: 0;
+            padding: 0;
+            font: 15px/18px Tahoma, Geneva, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #eee;
+        }
+
+        header {
+            display: block;
+            background: #333;
+            padding: 15px;
+            position: relative;
+        }
+
+            header:after {
+                content: '';
+                display: block;
+                clear: both;
+            }
+
+        /*h1 {
+            float: left;
+            font-size: 32px;
+            line-height: 36px;
+            font-weight: bold;
+            /*color: #fff;*/
+            /*color: #999999;
+            text-transform: uppercase;
+            letter-spacing: -4px;
+            text-shadow: 2px 2px 0 rgba(255,255,255,0.3), -2px -2px 0 rgba(255,255,255,0.15), 4px -1px 0 rgba(255,255,255,0.35);
+            min-width: 90px;
+            padding-right: 20px;
+        }*/
+
+        .search {
+            position: absolute;
+            top: 15px;
+            right: 420px;
+            bottom: 15px;
+            left: 135px;
+            background: #fff;
+            border-radius: 4px;
+            padding: 4px;
+            overflow: hidden;
+        }
+
+            .search .input-bg {
+                position: absolute;
+                top: 0;
+                right: 36px;
+                bottom: 0;
+                left: 12px;
+            }
+
+            .search input {
+                border: none;
+                background: none;
+                display: block;
+                width: 100%;
+                height: 28px;
+                padding: 4px 0;
+                outline: none;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .search button {
+                position: absolute;
+                right: 4px;
+                height: 28px;
+                width: 28px;
+                border: none;
+                background: #09f;
+                border-radius: 3px;
+                cursor: pointer;
+            }
+
+                .search button:before,
+                .search button:after {
+                    content: '';
+                    position: absolute;
+                }
+
+                .search button:before {
+                    top: 6px;
+                    left: 6px;
+                    width: 9px;
+                    height: 9px;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                }
+
+                .search button:after {
+                    top: 18px;
+                    left: 15px;
+                    width: 8px;
+                    height: 2px;
+                    background: #fff;
+                    border-radius: 2px;
+                    transform: rotate(45deg);
+                }
+
+        nav {
+            float: right;
+            margin: -15px;
+            margin-left: 0;
+            width: 380px;
+        }
+
+            nav ul {
+                list-style: none;
+            }
+
+                nav ul:after {
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+
+            nav li {
+                float: left;
+            }
+
+            nav a {
+                display: block;
+                font-size: 14px;
+                color: #eee;
+                text-decoration: none;
+                padding: 24px 20px;
+                transition: 0.2s all;
+            }
+
+                nav .active a,
+                nav a:hover {
+                    background: #222;
+                    box-shadow: 0 3px 0 #09f inset;
+                }
+
+
+        /* ./ 02/26/2019*/
+
+    </style>
+
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Logo</h1>
+            <div class="search">
+                <div class="input-bg">
+                    <input type="text" placeholder="Search for something..." onclick="window.open('search_results.html');">
+                </div>
+                <button type="submit"></button>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#">Page 1 </a></li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                    <li><a href="#">Page 4</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <h1>Search Results</h1>
+        <p></p>
+        <h4 class="tiny-results-name">Content Management Systems</h4>
+        <div class="search-result">
+            <h2><a href="https://docs.servicenow.com/bundle/london-servicenow-platform/page/administer/content-management/concept/c_ContentManagementPlanning.html">Content Management Design</a></h2>
+            <p class="destination-url">docs.servicenow.com/bundle/london-servicenow-platform/page/administer/content-management/concept/c_ContentManagementPlanning.html</p>
+            <p class="result-desc">
+                Before building a website in the CMS, it is important to have a good understanding of what to build and who the audience is.
+            </p>
+        </div>
+        
+         <div class="search-result">
+            <h2><a href="https://docs.servicenow.com/bundle/london-servicenow-platform/page/administer/content-management/concept/c_OrganizeContent.html">Content Organization</a></h2>
+            <p class="destination-url">docs.servicenow.com/bundle/london-servicenow-platform/page/administer/content-management/concept/c_OrganizeContent.html</p>
+            <p class="result-desc">
+                Before you begin to build the CMS website, list all the content that you want to include and take the time to organize it.<br />
+                Content Managment Systems rely on two different types of content.<br />
+                •Site information: such as site pages, images, and menus<br />
+                •System information: such as knowledge base articles and catalog items
+            </p>
+        </div>
+        <div class="search-result">
+            <h2><a href="https://docs.servicenow.com/bundle/london-servicenow-platform/page/administer/content-management/concept/c_PrototypesAndRapidWebDesign.html">Prototypes and rapid web design</a></h2>
+            <p class="destination-url">docs.servicenow.com/bundle/london-servicenow-platform/page/administer/content-management/concept/c_PrototypesAndRapidWebDesign.html</p>
+            <p class="result-desc">Many user interface designers use prototypes and rapid web design techniques to visualize the final product before it is developed.</p>
+        </div>
+        <div class="search-result">
+            <h2><a href="https://docs.servicenow.com/bundle/london-servicenow-platform/page/administer/content-management/concept/c_LeverageTheCorporateStyleGuide.html">Corporate Style Guide</a></h2>
+            <p class="destination-url">docs.servicenow.com/bundle/london-servicenow-platform/page/administer/content-management/concept/c_LeverageTheCorporateStyleGuide.html</p>
+            <p class="result-desc">When you build a CMS website, you design the look and feel based on guidelines in thecorporate style guide..</p>
+        </div>
+        <!--<div class="search-result">
+            <h2><a href="http://www.themeparkinsider.com/flume/201409/4228/">Hard Rock Park</a></h2>
+            <p class="destination-url">www.themeparkinsider.com/flume/201409/4228/</p>
+            <p class="result-desc">The ghosts of big ideas still haunt these hallowed halls. What was once a grand idea is now one of the most disappointing theme park sagas in American history.</p>
+        </div>-->
+
+
+        <!-- Footer Section -->
+        <!--<footer id="contact">
+    <p class="hero_header">CONTACT INFORMATION</p>-->
+        <!--<div class="button">--><!--EMAIL ME--> <!--</div>-->
+        <!--</footer>-->
+    </div>
+    <!-- Main Container Ends -->
+    
+  
+        
+   
+</body>
+</html>

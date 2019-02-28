@@ -1,0 +1,296 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="css/simpleGridTemplate.css" rel="stylesheet" type="text/css">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <style>
+        /* Style inputs with type="text", select elements and textareas */
+        input[type=text], select, textarea {
+            width: 100%; /*Full width */
+            padding: 12px; /* Some padding */
+            border: 1px solid #ccc; /* Gray border */
+            border-radius: 4px; /* Rounded borders */
+            box-sizing: border-box; /* Make sure that padding and width stays in place */
+            margin-top: 6px; /* Add a top margin */
+            margin-bottom: 16px; /* Bottom margin */
+            resize: vertical /* Allow the userto vertically resize the textarea (not horizontally) */
+        }
+
+        /* Style the submit button with a specific background color etc */
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            /* When moving the mouse over the submit button,add a darker green color */
+            input[type=submit]:hover {
+                background-color: #45a049;
+            }
+
+        /* Add a background color and somepadding around the form */
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        /*  file upload */
+
+        .inputDnD {
+            .form-control-file
+
+        {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 6em;
+            outline: none;
+            visibility: hidden;
+            cursor: pointer;
+            background-color: #c61c23;
+            box-shadow: 0 0 5px solid currentColor;
+            &:before
+
+        {
+            content: attr(data-title);
+            position: absolute;
+            top: 0.5em;
+            left: 0;
+            width: 100%;
+            min-height: 6em;
+            line-height: 2em;
+            padding-top: 1.5em;
+            opacity: 1;
+            visibility: visible;
+            text-align: center;
+            border: 0.25em dashed currentColor;
+            transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+            overflow: hidden;
+        }
+
+        &:hover {
+            &:before
+
+        {
+            border-style: solid;
+            box-shadow: inset 0px 0px 0px 0.25em currentColor;
+        }
+
+        }
+        }
+        }
+
+
+        body {
+            background-color: #f7f7f9;
+        }
+        /* ./ file upload */
+    </style>
+    <script type="text/javascript">
+        function readUrl(input) {
+
+            if (input.files && input.files[0]) {
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    let imgData = e.target.result;
+                    let imgName = input.files[0].name;
+                    input.setAttribute("data-title", imgName);
+                    console.log(e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <!--<h4 class="logo">IT SERVICES & SUPPORT CENTER</h4>-->
+            <h4 class="logo">SUBMIT A REQUEST</h4>
+        </header>
+        <div class="container">
+
+            <div class="container">
+                <form action="action_page.php">
+
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                    <label for="email">Email</label>
+                    <input type="text" id="email" name="email" placeholder="Your email..">
+
+                    <label for="phone">Phone</label>
+                    <input type="text" id="phone" name="phone" placeholder="Your phone#..">
+
+                    <label for="country">Type Of Request</label>
+                    <select id="country" name="country">
+                        <option value="support">Support Request</option>
+                        <option value="ams">AMS Software Request</option>
+                        <option value="hrdwre">Hardware Support</option>
+                        <option value="hrdwre">Classroom Technology Support</option>
+                    </select>
+
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="Subject..">
+
+                    <label for="subject">Detailed Description</label>
+                    <textarea id="subject" name="descr" placeholder="Please provide specific details about this issue (error messages, steps taken to troubleshoot or previous solution(s) attempted) or specific request/work to be done..." style="height:200px"></textarea>
+
+                    
+                    
+                    <!-- file upload-->
+                    <div class="container p-y-1">
+                        <div class="row m-b-1">
+                            <div class="col-sm-6 offset-sm-3">
+                                <!--<button type="button" class="btn btn-primary btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>-->
+                                <div class="form-group inputDnD">
+                                    <label class="sr-only" for="inputFile">Add File Attachment</label>
+                                    Add File Attachment<input type="file" class="form-control-file text-primary font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="row m-b-1">
+                            <div class="col-sm-6 offset-sm-3">
+                                <button type="button" class="btn btn-success btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+                                <div class="form-group inputDnD">
+                                    <label class="sr-only" for="inputFile">File Upload</label>
+                                    <input type="file" class="form-control-file text-success font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-b-1">
+                            <div class="col-sm-6 offset-sm-3">
+                                <button type="button" class="btn btn-warning btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+                                <div class="form-group inputDnD">
+                                    <label class="sr-only" for="inputFile">File Upload</label>
+                                    <input type="file" class="form-control-file text-warning font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-b-1">
+                            <div class="col-sm-6 offset-sm-3">
+                                <button type="button" class="btn btn-danger btn-block" onclick="document.getElementById('inputFile').click()">Add Image</button>
+                                <div class="form-group inputDnD">
+                                    <label class="sr-only" for="inputFile">File Upload</label>
+                                    <input type="file" class="form-control-file text-danger font-weight-bold" id="inputFile" accept="image/*" onchange="readUrl(this)" data-title="Drag and drop a file">
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                    
+                   <!--./ file upload--> 
+                    
+                    <input type="submit" value="Submit">
+
+                </form>
+            </div>
+        </div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Footer Section -->
+        <footer id="contact">
+            <!--<p class="hero_header">GET IN TOUCH WITH ME</p>
+            <div class="button">EMAIL ME </div>-->
+        </footer>
+
+    </div>
+<!-- Main Container Ends -->
+</body>
+</html>

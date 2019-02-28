@@ -1,0 +1,196 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="js/carousel.js"></script>
+    <link href="css/carousel.css" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style>
+        /* iframe video wrapper */
+        .videoWrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            padding-top: 25px;
+            height: 0;
+        }
+
+            .videoWrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+        iframe {
+            width: 100%;
+            height: 750px;
+            margin: auto;
+            /*padding: 0px;*/
+            background: blue;
+            border: 0px;
+            /*display: block;*/
+        }
+        /* end iframe video wrapper */
+
+        /* navbar */
+        /* Add a black background color to the top navigation bar */
+        .topnav {
+            overflow: hidden;
+            background-color: #e9e9e9;
+        }
+
+            /* Style the links inside the navigation bar */
+            .topnav a {
+                float: left;
+                display: block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+                /* Change the color of links on hover */
+                .topnav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+                /* Style the "active" element to highlight the current page */
+                .topnav a.active {
+                    background-color: #2196F3;
+                    color: white;
+                }
+
+            /* Style the search box inside the navigation bar */
+            .topnav input[type=text] {
+                float: right;
+                padding: 6px;
+                border: none;
+                margin-top: 8px;
+                margin-right: 16px;
+                font-size: 17px;
+            }
+
+        /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+        @media screen and (max-width: 600px) {
+            .topnav a, .topnav input[type=text] {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+
+        /* end navbar */
+    </style>
+</head>
+ <body>
+     <div class="container">
+
+         <!--<div class="topnav">
+             <a class="active" href="#home">Home</a>
+             <a href="#about">About</a>
+             <a href="#contact">Contact</a>
+             <a href="#"></a>
+             <div class="input-group col-md-9">
+                 <input type="text" class="form-control" placeholder="Search">
+                 <div class="input-group-append">
+                     <button class="btn btn-secondary" type="button">
+                         <i class="fa fa-search"></i>
+                     </button>
+                 </div>
+             </div>
+
+             <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="/accounts/login/">Sign In</a></div>
+
+         </div>--><!-- ./topnav-->
+
+         <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+             <!-- Wrapper for slides -->
+             <div class="carousel-inner">
+
+                 <div class="item active">
+                     <!--<img src="http://placehold.it/760x400/cccccc/ffffff">-->
+                     <div class="videoWrapper">
+                         <iframe width="560" height="349" src="https://www.youtube.com/embed/Y6QgA0SiIOg"
+                                 frameborder="0"
+                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                 allowfullscreen></iframe>
+                     </div>
+                     <div class="carousel-caption">
+                         <h4><a href="#">OFFICE 365 BREIF</a></h4>
+                         <p><a class="label label-primary" href="https://help.westpoint.edu" target="_blank">More</a></p>
+                     </div>
+                 </div><!-- End Item -->
+
+                 <div class="item">
+                     <img src="http://placehold.it/760x400/999999/cccccc">
+                     <div class="carousel-caption">
+                         <h4><a href="#">CIO BRIEF</a></h4>
+                         <p>..........text...text.....<a class="label label-primary" href="#" target="_blank">More</a></p>
+                     </div>
+                 </div><!-- End Item -->
+
+                 <div class="item">
+                     <img src="http://placehold.it/760x400/dddddd/333333">
+                     <div class="carousel-caption">
+                         <h4><a href="#">CIO BRIEF</a></h4>
+                         <p>..........text...text....<a class="label label-primary" href="#" target="_blank">More</a></p>
+                     </div>
+                 </div><!-- End Item -->
+
+                 <div class="item">
+                     <img src="http://placehold.it/760x400/999999/cccccc">
+                     <div class="carousel-caption">
+                         <h4><a href="#">TRENDING NOW</a></h4>
+                         <p>..........text...text.... <a class="label label-primary" href="#" target="_blank">More</a></p>
+                     </div>
+                 </div><!-- End Item -->
+
+                 <div class="item">
+                     <img src="http://placehold.it/760x400/dddddd/333333">
+                     <div class="carousel-caption">
+                         <h4><a href="#">NEWS & ANNOUNCEMENTS</a></h4>
+                         <p>..........text...text....<a class="label label-primary" href="#" target="_blank">Button</a></p>
+                     </div>
+                 </div><!-- End Item -->
+
+             </div><!-- End Carousel Inner -->
+
+
+             <ul class="list-group col-sm-4">
+                 <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active"><h4>OFFICE 365</h4></li>
+                 <li data-target="#myCarousel" data-slide-to="1" class="list-group-item"><h4>TOPIC 2</h4></li>
+                 <li data-target="#myCarousel" data-slide-to="2" class="list-group-item"><h4>TOPIC 3</h4></li>
+                 <li data-target="#myCarousel" data-slide-to="3" class="list-group-item"><h4>TRENDING NOW</h4></li>
+                 <li data-target="#myCarousel" data-slide-to="4" class="list-group-item"><h4>NEWS & ANNOUNCEMENTS</h4></li>
+             </ul>
+
+             <!-- Controls -->
+             <div class="carousel-controls">
+                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                     <span class="glyphicon glyphicon-chevron-left"></span>
+                 </a>
+                 <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                     <span class="glyphicon glyphicon-chevron-right"></span>
+                 </a>
+             </div>
+
+         </div><!-- End Carousel -->
+     </div>
+  </body>
+</html>
